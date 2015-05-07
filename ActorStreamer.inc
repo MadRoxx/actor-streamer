@@ -401,7 +401,7 @@ stock GetDynamicActorHealth(actorid, &Float:health)
 	return 0;
 }
 
-stock SetDynamicActorInvulnerable(actorid, invulnerable = true)
+stock SetDynamicActorInvulnerable(actorid, bool:invulnerable = true)
 {
 	if (IsValidDynamicActor(actorid))
 	{
@@ -416,13 +416,13 @@ stock SetDynamicActorInvulnerable(actorid, invulnerable = true)
 	return 0;
 }
 
-stock IsDynamicActorInvulnerable(actorid)
+stock bool:IsDynamicActorInvulnerable(actorid)
 {
 	if (IsValidDynamicActor(actorid))
 	{
 	    return s_DynamicActors[actorid][e_bInvulnerable];
 	}
-	return 0;
+	return false;
 }
 
 forward OnActorStreamUpdate(actorid);
